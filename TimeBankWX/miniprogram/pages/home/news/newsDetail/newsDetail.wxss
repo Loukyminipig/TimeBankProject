@@ -1,0 +1,51 @@
+/* pages/home/newsDetail/newsDetail.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.title{
+  margin-top: -150rpx;
+  letter-spacing: 2px;
+}
+
+.head-image{
+  width: 750rpx;
+  height: 460rpx;
+}
+
+.author-date{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  width: 100%;
+}
+
+.author-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.author{
+  margin-left: 0rpx;
+}
+
+.datetime{
+  margin-right: 30rpx;
+}
+
+.source{
+  width: 100%;
+}
+
+.detail{
+  margin: 40rpx 22rpx 0;
+}

@@ -1,0 +1,17 @@
+<!--pages/home/newsDetail/newsDetail.wxml-->
+<view class="container">
+  <view class="title text-sl">测试新闻标题</view>
+  <view class="margin-top-xsm"></view>
+  <view class="author-date">
+    <view class="author-box">
+      <text class="author text-lg">发布人： 公益时间银行管理员</text>
+    </view>
+    <view class="datetime text-lg">2021-09-24 09:29</view>
+  </view>
+  <view class="margin-top-sm"></view>
+  <image class="head-image" src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84004.jpg"></image>
+  <view class="margin-top-sm"></view>
+  <view class="source text-xl">来源： 凯里养老顾问</view>
+  <view class="margin-top-sm"></view>
+  <view class="details text-xxl">随着城市化进程的加快，农村人口的养老隐性问题将显性化。解决农村人口养老问题将是社会不得不面对的重要任务。在目前广大的农村地区，家庭养老、土地养老、社会保险养老三种模式是基本的养老保障方式，而社区养老模式则是一种新的尝试。</view>
+</view>

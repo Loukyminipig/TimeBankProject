@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<home wx:if="{{PageCur=='home'}}"></home>
+<info wx:if="{{PageCur=='info'}}"></info>
+<user wx:if="{{PageCur=='user'}}"></user>
+<!-- 这里的cu-tag后续作为新消息提示用 -->
+<view class="cu-bar tabbar bg-white foot">
+  <view class="action {{PageCur=='home'?'text-orange':'text-gray'}}" bindtap="NavChange" data-cur="home">
+    <view class="cuIcon-homefill"></view>首页
+  </view>
+  <view class="action {{PageCur=='info'?'text-orange':'text-gray'}}" bindtap="NavChange" data-cur="info">
+    <view class="cuIcon-messagefill">
+      <!-- <view class="cu-tag "></view> -->
+    </view>
+    消息
+  </view>
+  <view class="action {{PageCur=='user'?'text-orange':'text-gray'}}" bindtap="NavChange" data-cur="user">
+    <view class="cuIcon-myfill">
+      <!-- <view class="cu-tag "></view> -->
+    </view>
+    我的
+  </view>
+</view>

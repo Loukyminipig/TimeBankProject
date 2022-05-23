@@ -1,0 +1,7 @@
+<!--pages/info/info.wxml-->
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-grey "></text> 消息中心
+  </view>
+</view>
+<text>pages/home/home.wxml</text>

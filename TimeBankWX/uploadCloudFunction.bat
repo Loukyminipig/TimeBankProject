@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Tencent\微信web开发者工具\cli.bat" cloud functions deploy --e timebank-8geoqqgq56cf7a03 --n quickstartFunctions --r --project "C:\github-code\TimeBankProject\TimeBankWX" --report_first --report

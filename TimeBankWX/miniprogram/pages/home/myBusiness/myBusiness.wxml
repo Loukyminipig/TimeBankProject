@@ -1,0 +1,46 @@
+<!--pages/home/myBusiness/myBusiness.wxml-->
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{item.index ==TabCur?'text-orange cur':''}}" wx:for="{{tabList}}" wx:key="index"
+      bindtap="tabSelect" data-index="{{item.index}}" data-id="{{item.id}}" data-state="{{item.state}}">
+      {{func.text(item.state, bustype)}}
+    </view>
+  </view>
+</scroll-view>
+<scroll-view scroll-y="true" class="page">
+  <view class="cu-list menu-avatar">
+    <view class="cu-item" wx:for="{{businessList}}" wx:key="id" bindtap="" wx:if="{{listLen==0?false:true}}">
+      <view class="cu-avatar xl"
+        style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);">
+      </view>
+      <view class="content margin-left">
+        <view class="text-black">{{item.title}}</view>
+        <view class="margin-top-xs"></view>
+        <view class="text-black text-sm">{{item.datetime}}</view>
+      </view>
+      <view class="cu-capsule round">
+        <view class="cu-tag bg-{{func.bgcolor(item.state)}}">
+          {{func.text(item.state, bustype)}}
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<wxs module="func">
+  // 1 审核中 2 招募中 3 已报名 4 进行中/服务中 5 已完成 6 已关闭
+  var style = [['全部', 'black'], ['审核中', 'yellow'], ['招募中', 'purple'],
+  ['已报名', 'olive'], ['进行中', 'green'], ['已完成', 'blue'], ['已关闭', 'gray']];
+  var filter = {
+    bgcolor: function (state) {
+      return style[state][1];
+    },
+    text: function (state, bustype) {
+      if (state == 4 && bustype == 1) {
+        return '服务中';
+      } else {
+        return style[state][0];
+      }
+    }
+  };
+  module.exports = filter;
+</wxs>

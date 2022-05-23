@@ -1,0 +1,8 @@
+/* pages/home/businessList/businessList.wxss */
+.icon {
+  display: inline-block;
+  border: 10rpx solid transparent;
+  border-top: 10rpx solid #666;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}

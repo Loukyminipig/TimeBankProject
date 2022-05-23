@@ -1,0 +1,54 @@
+/* pages/home/home.wxss */
+/* 页面下方有个tab的高度要空出来 */
+.page{
+  margin-bottom: 120rpx;
+}
+
+/* 栏目间隔组件 */
+.top-box {
+  margin-top: 90rpx;
+}
+
+/* 栏目间隔组件 */
+.swiper-box {
+  margin-top: 30rpx;
+}
+
+/* 向上消息滚动 */
+.swiper-view {
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rpx;
+}
+
+.swiper_container {
+  height: 50rpx;
+  width: 100%;
+}
+
+.swiper_item {
+  height: 50rpx;
+  width: 100%;
+  font-size: 25rpx;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* 新闻九宫格 */
+.gridview{
+  margin: 5rpx 10rpx 5rpx 10rpx;
+}
+
+.gridview-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1%;
+  width: 48%;
+  height: 20%;
+  float: left;
+  background: white
+}

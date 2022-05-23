@@ -1,0 +1,10 @@
+<!--pages/home/businessList/businessList.wxml-->
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub" wx:for="{{tabList}}" wx:key="index">
+      <view class="content" >{{item.title}}
+        <view class="icon"></view>
+      </view>  
+    </view>
+  </view>
+</scroll-view>
