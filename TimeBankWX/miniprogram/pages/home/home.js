@@ -93,6 +93,11 @@ Component({
         name: "getStoryList"
       }).then(res => {
         console.log(res.result.data)
+        var title = new String(res.result.data[3].title)
+        if(title.length > 24){
+          var shortTitle = title.substr(0, 23)
+          console.log(shortTitle)
+        }
         this.setData({
           postListdata: res.result.data
         })

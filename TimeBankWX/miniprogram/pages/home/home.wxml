@@ -82,7 +82,7 @@
       <view class='gridview-item shadow-warp' bindtap="newsDetail">
         <image src="{{item.thumb}}" mode="aspectFill"></image>
         <view class="margin-top-xs"></view>
-        <text>{{item.title}}</text>
+        <text>{{utils.shortTitle(item.title)}}</text>
         <view class="margin-top-xs"></view>
         <text class="text-grey">{{utils.formatDate(item._createTime)}}</text>
       </view>
