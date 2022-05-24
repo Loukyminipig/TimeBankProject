@@ -1,4 +1,5 @@
 <!--pages/home/home.wxml-->
+<wxs src="../../utils/utils.wxs" module="utils"></wxs>
 <scroll-view scroll-y="true" class="page">
   <view class="cu-bar bg-orange search fixed" style="top:{{CustomBar}}px">
     <view class="search-form round">
@@ -79,11 +80,11 @@
   <view class='gridview'>
     <block wx:for="{{postListdata}}" wx:key="key">
       <view class='gridview-item shadow-warp' bindtap="newsDetail">
-        <image src="{{item.content}}" mode="aspectFill"></image>
+        <image src="{{item.thumb}}" mode="aspectFill"></image>
         <view class="margin-top-xs"></view>
         <text>{{item.title}}</text>
         <view class="margin-top-xs"></view>
-        <text class="text-grey">{{item.datetime}}</text>
+        <text class="text-grey">{{utils.formatDate(item._createTime)}}</text>
       </view>
     </block>
   </view>

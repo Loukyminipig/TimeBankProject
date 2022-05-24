@@ -1,5 +1,7 @@
 // pages/home/home.js
-import { LocalCash } from '../../datas/LocalCach';
+import {
+  LocalCash
+} from '../../datas/LocalCach';
 Component({
   options: {
     addGlobalClass: true,
@@ -7,9 +9,7 @@ Component({
   /**
    * 组件的属性列表
    */
-  properties: {
-
-  },
+  properties: {},
 
   /**
    * 组件的初始数据
@@ -32,7 +32,7 @@ Component({
       color: 'yellow',
       name: '时间币',
       url: '/pages/home/businessList/businessList'
-    },{
+    }, {
       icon: 'evaluate_fill',
       color: 'olive',
       name: '微心愿',
@@ -83,18 +83,33 @@ Component({
       wx.navigateTo({
         url: '/pages/home/myBusiness/myBusiness?bustype=' + e.target.dataset.bustype,
       })
-    }
+    },
   },
 
   lifetimes: {
+    created: function () {
+      console.log("c-created")
+      wx.cloud.callFunction({
+        name: "getStoryList"
+      }).then(res => {
+        console.log(res.result.data)
+        this.setData({
+          postListdata: res.result.data
+        })
+      })
+    },
+    ready: function () {
+      console.log("c-ready")
+    },
     attached: function () {
-      this.newsListObj = new LocalCash('newsList');
+      console.log("c-attached")
+      // this.newsListObj = new LocalCash('newsList');
       this.msgListOjb = new LocalCash('msgList');
       this.hostListObj = new LocalCash('hotsList');
       this.setData({
         swiperList: this.hostListObj.getAllData(),
         msgList: this.msgListOjb.getAllData(),
-        postListdata: this.newsListObj.getAllData()
+        // postListdata: this.newsListObj.getAllData()
       })
     }
   }
