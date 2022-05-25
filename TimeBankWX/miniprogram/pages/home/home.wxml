@@ -78,8 +78,8 @@
     </view>
   </view>
   <view class='gridview'>
-    <block wx:for="{{postListdata}}" wx:key="key">
-      <view class='gridview-item shadow-warp' bindtap="newsDetail">
+    <block wx:for="{{postListdata}}" wx:key="index">
+      <view class='gridview-item shadow-warp' bindtap="storyDetail" data-content="{{item.content}}">
         <image src="{{item.thumb}}" mode="aspectFill"></image>
         <view class="margin-top-xs"></view>
         <text>{{utils.shortTitle(item.title)}}</text>

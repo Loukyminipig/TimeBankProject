@@ -72,7 +72,7 @@ Component({
 
     newsDetail(e) {
       console.log("tap one news");
-      console.log(e.target.dataset);
+      console.log(e.target);
       wx.navigateTo({
         url: '/pages/home/news/newsDetail/newsDetail',
       })
@@ -84,6 +84,17 @@ Component({
         url: '/pages/home/myBusiness/myBusiness?bustype=' + e.target.dataset.bustype,
       })
     },
+
+    storyDetail(e){
+      console.log("tap one story");
+      // console.log(e.currentTarget.dataset.content);
+      wx.navigateTo({
+        url: '/pages/home/news/richDetail/richDetail',
+        success: function(res){
+          res.eventChannel.emit('acceptDataFromOpenerPage', e.currentTarget.dataset.content)
+        }
+      })
+    }
   },
 
   lifetimes: {
@@ -93,11 +104,6 @@ Component({
         name: "getStoryList"
       }).then(res => {
         console.log(res.result.data)
-        var title = new String(res.result.data[3].title)
-        if(title.length > 24){
-          var shortTitle = title.substr(0, 23)
-          console.log(shortTitle)
-        }
         this.setData({
           postListdata: res.result.data
         })

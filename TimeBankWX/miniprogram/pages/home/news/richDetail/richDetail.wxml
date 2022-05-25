@@ -1,0 +1,2 @@
+<!--pages/home/news/richDetail/richDetail.wxml-->
+<rich-text nodes="{{content}}"></rich-text>
