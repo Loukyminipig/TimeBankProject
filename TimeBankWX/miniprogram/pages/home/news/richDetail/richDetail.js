@@ -14,13 +14,17 @@ Page({
   onLoad(options) {
     var eventChannel = this.getOpenerEventChannel()
     var richContent = " "
-    eventChannel.on('acceptDataFromOpenerPage', function (data) {
-      // console.log(data)
-      richContent = data
+    new Promise((resolve, reject) => {
+      eventChannel.on('acceptDataFromOpenerPage', function (data) {
+          richContent = data
+          resolve(richContent)
+      })
+    }).then((res) => {
+      this.setData({
+        content: richContent.replace('<img ', '<img style="max-width:100%;height:auto;display:block;margin:10px 0;"')
+      })
     })
-    this.setData({
-      content: richContent.replace('<img ', '<img style="max-width:100%;height:auto;display:block;margin:10px 0;"')
-    })
+
   },
 
   /**
