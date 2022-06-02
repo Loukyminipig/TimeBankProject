@@ -11,7 +11,8 @@ function formatDate(timestamp) {
 }
 
 function shortTitle(title) {
-  return title.length > 24 ? title.substring(0, 23) : title
+  var limitLen = 12
+   return (title.length - limitLen) > 0 ? title.substring(0, limitLen - 1) : title
 }
 
 module.exports = {
