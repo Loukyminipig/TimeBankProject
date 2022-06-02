@@ -50,7 +50,8 @@ Component({
     }],
     gridCol: 3,
     msgList: [],
-    postListdata: []
+    postListdata: [],
+    defaultImg: "../../images/defaultThumb.jpg"
   },
 
   /**
