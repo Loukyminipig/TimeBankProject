@@ -14,17 +14,7 @@ Page({
    */
   onLoad(options) {
     console.log("storyList onLoad")
-     wx.cloud.callFunction({
-        name: "getStoryList",
-        data: {
-          num: 8
-        }
-      }).then(res => {
-        console.log(res.result.data)
-        this.setData({
-          storyListData : res.result.data
-        })
-      })
+    this.getData()
   },
 
   /**
@@ -59,14 +49,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    // console.log("onPullDownRefresh")
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    // console.log("onReachBottom")
+    var page = this.data.storyListData.length
+    // console.log("page=" + page)
+    this.getData(8,page)
   },
 
   /**
@@ -84,6 +77,23 @@ Page({
       success: function(res){
         res.eventChannel.emit('acceptDataFromOpenerPage', e.currentTarget.dataset.content)
       }
+    })
+  },
+
+  getData:function(num=8, page=0){
+    wx.cloud.callFunction({
+      name: "getStoryList",
+      data: {
+        num: num,
+        page: page
+      }
+    }).then(res => {
+        var oldData = this.data.storyListData
+        var newData = oldData.concat(res.result.data)
+        console.log(newData)
+        this.setData({
+          storyListData : newData
+        })
     })
   }
 })

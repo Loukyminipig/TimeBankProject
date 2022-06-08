@@ -7,5 +7,6 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   var num = event.num
-  return await db.collection("story_list").orderBy("_createTime", "desc").limit(num).get()
+  var page = event.page
+  return await db.collection("story_list").orderBy("_createTime", "desc").skip(page).limit(num).get()
 }

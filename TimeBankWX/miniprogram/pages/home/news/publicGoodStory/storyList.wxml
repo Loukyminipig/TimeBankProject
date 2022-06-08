@@ -10,7 +10,7 @@
     <view class="cu-item" wx:for="{{storyListData}}" wx:key="index" bindtap="storyDetail" data-content="{{item.content}}">
       <view class="cu-avatar xl" style="background-image:url({{defaultImg}})"></view>
       <view class="content margin-left">
-        <view class="text-black">{{item.title}}</view>
+        <view class="text-black">{{utils.shortTitle(item.title)}}</view>
         <view class="margin-top-xs"></view>
         <view class="text-black text-m">{{utils.formatDate(item._createTime)}}</view>
       </view>

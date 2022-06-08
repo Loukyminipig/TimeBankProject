@@ -88,7 +88,7 @@ Component({
 
     storyDetail(e){
       console.log("tap one story");
-      console.log(e);
+      // console.log(e);
       wx.navigateTo({
         url: '/pages/home/news/richDetail/richDetail',
         success: function(res){
@@ -110,7 +110,8 @@ Component({
       wx.cloud.callFunction({
         name: "getStoryList",
         data: {
-          num: 6
+          num: 6,
+          page: 0
         }
       }).then(res => {
         console.log(res.result.data)

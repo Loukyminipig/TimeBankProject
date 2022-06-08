@@ -1,6 +1,6 @@
 /* pages/home/news/publicGoodStory/storyList.wxss */
 .page {
-  height: 100Vh;
+  height: auto;
   width: 100vw;
   background-color: white;
 }
