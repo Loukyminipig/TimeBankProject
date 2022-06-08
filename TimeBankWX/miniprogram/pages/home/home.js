@@ -97,6 +97,17 @@ Component({
       })
     },
 
+    hotDetail(e){
+      console.log("tap one swiper");
+      console.log(e);
+      wx.navigateTo({
+        url: '/pages/home/news/richDetail/richDetail',
+        success: function(res){
+          res.eventChannel.emit('acceptDataFromOpenerPage', e.currentTarget.dataset.content)
+        }
+      })
+    },
+
     moreStory(){
       wx.navigateTo({
         url: '/pages/home/news/publicGoodStory/storyList',
@@ -119,19 +130,29 @@ Component({
           postListdata: res.result.data
         })
       })
+
+      wx.cloud.callFunction({
+        name: "getSwiperList",
+        data: {
+          num: 3
+        }
+      }).then(res => {
+        console.log(res.result.data)
+        this.setData({
+          swiperList: res.result.data
+        })
+      })
     },
     ready: function () {
       console.log("c-ready")
     },
     attached: function () {
       console.log("c-attached")
-      // this.newsListObj = new LocalCash('newsList');
       this.msgListOjb = new LocalCash('msgList');
       this.hostListObj = new LocalCash('hotsList');
       this.setData({
         swiperList: this.hostListObj.getAllData(),
         msgList: this.msgListOjb.getAllData(),
-        // postListdata: this.newsListObj.getAllData()
       })
     }
   }
