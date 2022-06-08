@@ -1,5 +1,5 @@
 <!--pages/home/home.wxml-->
-<wxs src="../../utils/utils.wxs" module="utils"></wxs>
+<wxs src="/utils/utils.wxs" module="utils"></wxs>
 <scroll-view scroll-y="true" class="page">
   <view class="cu-bar bg-orange search fixed" style="top:{{CustomBar}}px">
     <view class="search-form round">
@@ -75,6 +75,10 @@
     <view class="action">
       <text class="cuIcon-titles text-orange"></text>
       公益故事
+    </view>
+    <view class="action" bindtap="moreStory">
+      <text class="cuIcon-titles text-green"></text>
+      更多故事
     </view>
   </view>
   <view class='gridview'>

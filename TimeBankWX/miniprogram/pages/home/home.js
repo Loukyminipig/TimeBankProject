@@ -35,7 +35,7 @@ Component({
     }, {
       icon: 'evaluate_fill',
       color: 'olive',
-      name: '微心愿',
+      name: '心愿墙',
       url: '/pages/home/businessList/businessList'
     }, {
       icon: 'friendfill',
@@ -51,7 +51,7 @@ Component({
     gridCol: 3,
     msgList: [],
     postListdata: [],
-    defaultImg: "../../images/defaultThumb.jpg"
+    defaultImg: "/images/defaultThumb.jpg"
   },
 
   /**
@@ -88,12 +88,18 @@ Component({
 
     storyDetail(e){
       console.log("tap one story");
-      // console.log(e.currentTarget.dataset.content);
+      console.log(e);
       wx.navigateTo({
         url: '/pages/home/news/richDetail/richDetail',
         success: function(res){
           res.eventChannel.emit('acceptDataFromOpenerPage', e.currentTarget.dataset.content)
         }
+      })
+    },
+
+    moreStory(){
+      wx.navigateTo({
+        url: '/pages/home/news/publicGoodStory/storyList',
       })
     }
   },
@@ -102,7 +108,10 @@ Component({
     created: function () {
       console.log("c-created")
       wx.cloud.callFunction({
-        name: "getStoryList"
+        name: "getStoryList",
+        data: {
+          num: 6
+        }
       }).then(res => {
         console.log(res.result.data)
         this.setData({

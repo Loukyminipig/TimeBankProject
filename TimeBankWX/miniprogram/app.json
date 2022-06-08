@@ -6,13 +6,14 @@
     "pages/home/news/newsDetail/newsDetail",
     "pages/home/myBusiness/myBusiness",
     "pages/home/businessList/businessList",
-    "pages/home/news/richDetail/richDetail"
+    "pages/home/news/richDetail/richDetail",
+    "pages/home/news/publicGoodStory/storyList"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f37b1d",
-    "navigationBarTitleText": "凯里公益时间银行",
+    "navigationBarTitleText": "银龄时间银行",
     "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",

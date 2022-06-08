@@ -1,0 +1,6 @@
+/* pages/home/news/publicGoodStory/storyList.wxss */
+.page {
+  height: 100Vh;
+  width: 100vw;
+  background-color: white;
+}
